@@ -5,6 +5,8 @@ Author: Romina Wendell
 
 **Accountability:** The expectation and practice that both individuals and institutions must answer for their actions and accept consequences for harm or rule-breaking.
 
+**Acephalous societies:** Societies with no single governing head or centralized leadership, where power and decision-making are shared across families or groups and usually organized through consensus.
+
 **Agents of socialization:** The individuals, groups, and institutions that teach and reinforce norms, values, skills, and identities. Major agents include family, peers, schools, media, religious communities, workplaces, and other organizations.
 
 **Ancestor Consciousness:** Paying attention to the presence and stories of those who came before us.
