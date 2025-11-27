@@ -4,10 +4,15 @@ Project: Thinking Like A Village
 Author: Romina Wendell
 ---
 **Accountability:** The expectation and practice that both individuals and institutions must answer for their actions and accept consequences for harm or rule-breaking.
+
 **Agents of socialization:** The individuals, groups, and institutions that teach and reinforce norms, values, skills, and identities. Major agents include family, peers, schools, media, religious communities, workplaces, and other organizations.
+
 **Assisted reproductive technologies (ART):** Medical techniques such as in vitro fertilization, sperm or egg donation, and surrogacy that help people conceive. ART reshapes ideas of parenthood, kinship, and the body.
+
 **Autonomy:** The capacity of individuals or groups to make decisions and act according to their own values and judgments within the limits set by collective norms.
+
 **Backfire effect:** A reaction in which attempts to correct false beliefs strengthen those beliefs instead, because new information clashes with an existing mental framework.
+
 **Bands and tribes:** Categories of small-scale political organization characterized by relatively low population density and limited formal bureaucracy. Bands typically rely on kinship and consensus, while tribes add more enduring leadership roles and larger, more settled communities.
 
 **Biological continuity:** The maintenance of a population over time through fertility, birth, and child survival. It connects individual reproductive choices with long-term demographic patterns.

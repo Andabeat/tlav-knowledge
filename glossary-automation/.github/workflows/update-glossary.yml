@@ -1,0 +1,35 @@
+name: Update Glossary
+
+on:
+  push:
+    paths:
+      - 'glossary-automation/new-terms.md'   # adjust path if your folder is named differently
+
+jobs:
+  update-glossary:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write   # allow the workflow to push commits back to the repo
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run glossary update script
+        working-directory: glossary-automation   # folder where update_glossary.py lives
+        run: |
+          python update_glossary.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.name "glossary-bot"
+          git config --local user.email "glossary-bot@users.noreply.github.com"
+          git add glossary-automation/glossary.md glossary-automation/new-terms.md
+          git commit -m "Automated glossary update" || echo "No changes to commit"
+          git push
