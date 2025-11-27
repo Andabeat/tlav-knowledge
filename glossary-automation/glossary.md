@@ -1,6 +1,5 @@
 ---
 [TLAV Glossary File - v02]
-Project: Thinking Like A Village
 Author: Romina Wendell
 ---
 
