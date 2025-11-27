@@ -1,4 +1,5 @@
 **Ancestor Consciousness:** Paying attention to the presence and stories of those who came before us.
+
 **Village Mindset:** A way of thinking that centers interdependence, care, and shared responsibility.
 
 **Disruptive elements:** Actions or behaviours that destabilize everyday life, such as violence, theft, corruption, or practices powerful groups label as dangerous.[^1_1]
@@ -35,4 +36,4 @@
 
 **Legitimacy of control:** The extent to which people see rules and enforcement as fair, necessary, and aligned with shared values rather than narrow elite interests.[^1_1]
 
-**Desistance from crime:** The process through which people move away from offending, often supported by predictable, proportionate sanctions and strong social ties.[^1_1]
+**Desistance from crime:** The process through which people move away from offending, often supported by predictable, proportionate sanctions and strong social ties.[^1_1]-automation
