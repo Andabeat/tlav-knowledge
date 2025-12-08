@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let originalHtml = '';
   let plainText = '';
 
-  fetch('https://raw.githubusercontent.com/Andabeat/tlav-knowledge/refs/heads/main/docs/glossary-automation/glossary.md')
+  fetch('./glossary.md')
   .then((res) => {
     if (!res.ok) throw new Error('Failed to load glossary.md');
     return res.text();
