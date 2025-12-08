@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TLAV Glossary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- markdown-it from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/13.0.1/markdown-it.min.js"
+          integrity="sha512-SYfDUYPg5xspsG6OOpXU366G8SZsdHOhqk/icdrYJ2E/WKZxPxze7d2HD3AyXpT7U22PZ5y74xRpqZ6A2bJ+kQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- your scripts -->
+  <script src="render-markdown.js" defer></script>
+  <script src="search.js" defer></script>
+</head>
+<body>
+  <header class="tlav-header">
+    <div class="tlav-container">
+      <h1>Thinking Like a Village – Glossary</h1>
+      <p class="tlav-subtitle">Anthropological and sociological terms for TLAV practice</p>
+    </div>
+  </header>
+
+  <main class="tlav-container">
+    <section class="search-section">
+      <label for="glossary-search">Search terms:</label>
+      <input id="glossary-search" type="search" placeholder="Type to filter terms…" />
+      <p class="search-hint">Search matches within terms and definitions.</p>
+    </section>
+
+    <section id="glossary-content">
+      <p>Loading glossary…</p>
+    </section>
+  </main>
+
+  <footer class="tlav-footer">
+    <div class="tlav-container">
+      <p>&copy; Thinking Like a Village – Glossary</p>
+    </div>
+  </footer>
+</body>
+</html>

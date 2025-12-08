@@ -1,0 +1,138 @@
+:root {
+  --tlav-bg: #faf7f2;
+  --tlav-primary: #3a4a63;
+  --tlav-accent: #c66a2b;
+  --tlav-text: #1f2933;
+  --tlav-muted: #6b7280;
+  --tlav-border: #e5e7eb;
+  --tlav-radius: 6px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--tlav-bg);
+  color: var(--tlav-text);
+  line-height: 1.6;
+}
+
+/* Layout */
+
+.tlav-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+}
+
+header.tlav-header {
+  background: var(--tlav-primary);
+  color: #fff;
+  padding: 1.5rem 0;
+}
+
+.tlav-header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.8rem;
+}
+
+.tlav-subtitle {
+  margin: 0;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+}
+
+main {
+  padding: 1.5rem 0 2.5rem;
+}
+
+footer.tlav-footer {
+  border-top: 1px solid var(--tlav-border);
+  background: #f9fafb;
+  color: var(--tlav-muted);
+  font-size: 0.85rem;
+}
+
+/* Search */
+
+.search-section {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: var(--tlav-radius);
+  border: 1px solid var(--tlav-border);
+}
+
+.search-section label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+#glossary-search {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--tlav-radius);
+  border: 1px solid var(--tlav-border);
+  font-size: 1rem;
+}
+
+#glossary-search:focus {
+  outline: 2px solid var(--tlav-accent);
+  outline-offset: 1px;
+}
+
+.search-hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: var(--tlav-muted);
+}
+
+/* Glossary content */
+
+#glossary-content {
+  background: #ffffff;
+  border-radius: var(--tlav-radius);
+  border: 1px solid var(--tlav-border);
+  padding: 1.5rem 1.25rem;
+}
+
+#glossary-content h1,
+#glossary-content h2,
+#glossary-content h3 {
+  color: var(--tlav-primary);
+  scroll-margin-top: 4.5rem;
+}
+
+#glossary-content h2 {
+  border-bottom: 1px solid var(--tlav-border);
+  padding-bottom: 0.25rem;
+  margin-top: 1.5rem;
+}
+
+#glossary-content a {
+  color: var(--tlav-accent);
+  text-decoration: none;
+}
+#glossary-content a:hover {
+  text-decoration: underline;
+}
+
+/* Filtered state indicators (optional) */
+
+body.is-filtering #glossary-content .no-results {
+  display: block;
+}
+
+/* Responsive */
+
+@media (max-width: 640px) {
+  .tlav-header h1 {
+    font-size: 1.4rem;
+  }
+}
