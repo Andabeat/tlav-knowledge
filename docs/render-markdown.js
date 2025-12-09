@@ -19,12 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
       originalHtml = md.render(text);
       container.innerHTML = originalHtml;
 
-      // mark glossary as ready for search.js
       window.__TLAV_GLOSSARY__ = {
         container,
         getOriginalHtml: () => originalHtml,
         isReady: () => !!originalHtml
       };
+
+      window.dispatchEvent(new Event('tlav_glossary_ready'));
     })
     .catch((err) => {
       console.error(err);

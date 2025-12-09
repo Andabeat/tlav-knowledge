@@ -1,55 +1,65 @@
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('glossary-search');
+  if (!searchInput) return;
 
-  if (!searchInput || !window.__TLAV_GLOSSARY__) return;
+  function attachSearch(glossary) {
+    const { container } = glossary;
 
-  const { container } = window.__TLAV_GLOSSARY__;
+    function applyFilter(query) {
+      const q = query.trim().toLowerCase();
+      const sections = [];
 
-  function applyFilter(query) {
-    const q = query.trim().toLowerCase();
-    const sections = [];
+      // Build sections: each h2 plus its following siblings until next h1/h2
+      const nodes = Array.from(container.children);
+      let current = null;
 
-    // Build sections: each h2 plus its following siblings until next h1/h2
-    const nodes = Array.from(container.children);
-    let current = null;
+      nodes.forEach((node) => {
+        if (node.tagName === 'H2') {
+          current = { heading: node, nodes: [node] };
+          sections.push(current);
+        } else if (current) {
+          current.nodes.push(node);
+        }
+      });
 
-    nodes.forEach((node) => {
-      if (node.tagName === 'H2') {
-        current = { heading: node, nodes: [node] };
-        sections.push(current);
-      } else if (current) {
-        current.nodes.push(node);
+      if (!q) {
+        sections.forEach((section) => {
+          section.nodes.forEach((n) => {
+            n.style.display = '';
+          });
+        });
+        document.body.classList.remove('is-filtering');
+        return;
       }
-    });
 
-    if (!q) {
-      // Show everything
+      document.body.classList.add('is-filtering');
+
       sections.forEach((section) => {
+        const text = section.nodes
+          .map((n) => n.textContent.toLowerCase())
+          .join(' ');
+
+        const match = text.includes(q);
+
         section.nodes.forEach((n) => {
-          n.style.display = '';
+          n.style.display = match ? '' : 'none';
         });
       });
-      document.body.classList.remove('is-filtering');
-      return;
     }
 
-    document.body.classList.add('is-filtering');
-
-    sections.forEach((section) => {
-      const text = section.nodes
-        .map((n) => n.textContent.toLowerCase())
-        .join(' ');
-
-      const match = text.includes(q);
-
-      section.nodes.forEach((n) => {
-        n.style.display = match ? '' : 'none';
-      });
+    searchInput.addEventListener('input', (e) => {
+      if (!glossary.isReady()) return;
+      applyFilter(e.target.value);
     });
   }
 
-  searchInput.addEventListener('input', (e) => {
-    if (!window.__TLAV_GLOSSARY__.isReady()) return;
-    applyFilter(e.target.value);
-  });
+  // If glossary is already ready, attach immediately
+  if (window.__TLAV_GLOSSARY__) {
+    attachSearch(window.__TLAV_GLOSSORY__);
+  } else {
+    // Otherwise, wait until render-markdown.js sets it
+    window.addEventListener('tlav_glossary_ready', () => {
+      attachSearch(window.__TLAV_GLOSSARY__);
+    });
+  }
 });
