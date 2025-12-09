@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TLAV – 11 Prerequisites</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./styles.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/13.0.1/markdown-it.min.js"
+          integrity="sha512-SYfDUYPg5xspsG6OOpXU366G8SZsdHOhqk/icdrYJ2E/WKZxPxze7d2HD3AyXpT7U22PZ5y74xRpqZ6A2bJ+kQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('content');
+      if (!container) return;
+
+      const md = window.markdownit({
+        html: false,
+        linkify: true,
+        typographer: true
+      });
+
+      fetch('./prerequisites.md')
+        .then((res) => {
+          if (!res.ok) throw new Error('Failed to load prerequisites.md');
+          return res.text();
+        })
+        .then((text) => {
+          container.innerHTML = md.render(text);
+        })
+        .catch((err) => {
+          console.error(err);
+          container.textContent = 'Error loading content.';
+        });
+    });
+  </script>
+</head>
+<body>
+  <header class="tlav-header">
+    <div class="tlav-container">
+      <h1>Thinking Like a Village – 11 Prerequisites</h1>
+      <p class="tlav-subtitle">Foundational conditions for a functioning society</p>
+    </div>
+  </header>
+
+  <main class="tlav-container">
+    <section id="content">
+      <p>Loading content…</p>
+    </section>
+  </main>
+
+  <footer class="tlav-footer">
+    <div class="tlav-container">
+      <p>&copy; Thinking Like a Village</p>
+    </div>
+  </footer>
+</body>
+</html>
