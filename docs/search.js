@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // If glossary is already ready, attach immediately
   if (window.__TLAV_GLOSSARY__) {
-    attachSearch(window.__TLAV_GLOSSORY__);
+    attachSearch(window.__TLAV_GLOSSARY__);
   } else {
     // Otherwise, wait until render-markdown.js sets it
     window.addEventListener('tlav_glossary_ready', () => {
