@@ -11,9 +11,9 @@
           integrity="sha512-SYfDUYPg5xspsG6OOpXU366G8SZsdHOhqk/icdrYJ2E/WKZxPxze7d2HD3AyXpT7U22PZ5y74xRpqZ6A2bJ+kQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <!-- temporarily disable external JS while we debug -->
-  <!-- <script src="./render-markdown.js" defer></script> -->
-  <!-- <script src="./search.js" defer></script> -->
+  <!-- external scripts in docs/ -->
+  <script src="./render-markdown.js" defer></script>
+  <script src="./search.js" defer></script>
 </head>
 <body>
   <header class="tlav-header">
@@ -40,32 +40,5 @@
       <p>&copy; Thinking Like a Village – Glossary</p>
     </div>
   </footer>
-
-  <!-- Inline, known-good markdown fetch + render -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const container = document.getElementById('glossary-content');
-      if (!container) return;
-
-      const md = window.markdownit({
-        html: false,
-        linkify: true,
-        typographer: true
-      });
-
-      fetch('https://raw.githubusercontent.com/Andabeat/tlav-knowledge/refs/heads/main/docs/glossary.md')
-        .then((res) => {
-          if (!res.ok) throw new Error('Failed to load glossary.md');
-          return res.text();
-        })
-        .then((text) => {
-          container.innerHTML = md.render(text);
-        })
-        .catch((err) => {
-          console.error(err);
-          container.textContent = 'Error loading glossary.';
-        });
-    });
-  </script>
 </body>
 </html>

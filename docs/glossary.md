@@ -1,6 +1,6 @@
 ---
 [TLAV Glossary File - v02]
-Author: Romina Wendell
+Author: Thinking Like A Village
 ---
 
 **Accountability:** The expectation and practice that both individuals and institutions must answer for their actions and accept consequences for harm or rule-breaking.
